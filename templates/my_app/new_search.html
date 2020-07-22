@@ -1,12 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 <h2 style="text-align: center;">{{ search | title}}</h2>
 
-{% for post in final_postings %}
-<p>{{ post.0 }}</p><br>
-<p>{{ post.1 }}</p><br>
-<p>{{ post.2 }}</p><br> {% endfor %}
-
 <div class="row">
+    {% for post in final_postings %}
     <div class="col s4">
         <div class="card">
             <div class="card-image">
@@ -14,41 +10,16 @@
                 <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                <p>{{ post.0 }}{{ post.2 }}</p>
             </div>
             <div class="card-action">
-                <a href="#">This is a link</a>
+                <a href="{{ post.1 }}">This is a link</a>
             </div>
         </div>
     </div>
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <img src="https://cdn.pixabay.com/photo/2020/06/24/20/41/truebsee-5337646_1280.jpg">
-                <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <img src="https://cdn.pixabay.com/photo/2020/06/24/20/41/truebsee-5337646_1280.jpg">
-                <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-
+    {% endfor %}
 </div>
+
+
+
 {% endblock %}
